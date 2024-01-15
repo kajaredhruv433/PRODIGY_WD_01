@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --primary-color: #f13033;
+            --primary-color-dark: #c3282b;
+            --secondary-color: #f9f9f9;
+            --text-dark: #060606;
+            --text-light: #64748b;
+            --white: #ffffff;
+            --max-width: 1200px;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .section__container {
+            max-width: var(--max-width);
+            margin: auto;
+            padding: 5rem 1rem;
+        }
+
+        .section__header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .section__title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .section__nav {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section__nav span {
+            padding: 0 7px;
+            font-size: 1.75rem;
+            color: var(--text-dark);
+            border: 1px solid var(--text-dark);
+            border-radius: 100%;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .section__nav span:hover {
+            color: var(--white);
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            outline: none;
+            border: none;
+            font-size: 1rem;
+            font-weight: 600;
+            white-space: nowrap;
+            color: var(--white);
+            background-color: var(--primary-color);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-color-dark);
+        }
+
+        .badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            padding: 2px 15px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            background-color: #f0c8c9;
+            border-radius: 1rem;
+        }
+
+        img {
+            display: flex;
+            width: 100%;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        html,
+        body {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background-color: var(--secondary-color);
+        }
+
+        .header {
+            background-image: url("j.webp");
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        nav {
+            max-width: var(--max-width);
+            margin: auto;
+            padding: 2rem 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+       
+        
+
+        .nav__links {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .link a {
+            padding: 5px;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--white);
+        }
+
+        .link a:hover {
+            color: var(--primary-color);
+        }
+
+        .header__container {
+            padding: 5rem 1rem 10rem;
+        }
+
+        .header__container h1 {
+            margin-bottom: 4rem;
+            max-width: 1000px;
+            margin-inline: auto;
+            font-size: 3.5rem;
+            font-family: Algerian;
+            color: rgb(35, 34, 34);
+            text-align: center;
+        }
+
+        .header__form {
+            padding: 2rem;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+        }
+
+        .header__form form {
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+            background-color: var(--white);
+            border-radius: 10px;
+        }
+
+        .input__group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .input__group label {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .input__group input {
+            max-width: 140px;
+            outline: none;
+            border: none;
+            font-size: 0.9rem;
+        }
+
+        .trending__grid {
+            margin-top: 4rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .trending__card {
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+            background-color: rgba(255, 255, 255, 0.8); 
+        }
+
+        .trending__card img {
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            width: 100%;
+        }
+
+        .trending__card p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .trending__card h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .trending__details {
+            padding-block: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .trending__details p {
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .trending__details h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .trending__ratings span {
+            font-size: 0.9rem;
+            color: goldenrod;
+        }
+
+        .trending__ratings p {
+            text-align: right;
+        }
+
+        .trending__card h5 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .trending__card h5 span {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+
+        .trending__card p span {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+
+        .trending__card:hover {
+            box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.74);
+        }
+        .contact__container {
+            margin-top: 2rem; 
+            
+            padding: 0.2rem 1rem; 
+            text-align: center;
+        }
+
+        .contact__info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-top: 0.1rem; 
+        }
+
+        .contact__info p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: rgb(255, 255, 255);
+        }
+
+        .contact__info a {
+            color:rgba(255, 255, 255, 0.881);
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .contact__info a:hover {
+            color: var(--primary-color-dark);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <nav>
+            
+            <ul class="nav__links">
+                <li class="link"><a href="#home">Home</a></li>
+                <li class="link"><a href="#destinations">Destinations</a></li>
+                <li class="link"><a href="#contact">Contact Us</a></li>
+            </ul>
+           
+        </nav>
+        <div class="header__container">
+            <h1>Explore the World with Our Travel Experiences</h1>
+            
+        </div>
+        <div class="header__form">
+            <form action="#">
+                <div class="input__group">
+                    <label for="destination">Destination:</label>
+                    <input type="text" id="destination" placeholder="Enter destination">
+                </div>
+                
+                <button class="btn" type="submit">Search</button>
+            </form>
+        </div>
+    
+
+    <div class="section__container trending__grid">
+        <div class="trending__card">
+            <img src="ne.webp" alt="Trending Image">
+            <h4>Trending Sashay 1<br>New York City</h4>
+            <p>A vibrant and cosmopolitan metropolis, New York City boasts iconic skyscrapers, cultural diversity, and a pulsating energy, making it a city that never sleeps.</p>
+            <div class="trending__details">
+                
+            </div>
+            <div class="trending__ratings">
+                <span>5 Stars</span>
+                <p>Reviews</p> 
+            </div>
+        </div>
+
+        <div class="trending__card">
+            <img src="ky.jpg" alt="Trending Image">
+            <h4>Trending Sashay 2<br>Kyoto</h4>
+            <p>Kyoto is a serene blend of ancient tradition and natural beauty, with historic temples, traditional tea ceremonies, and enchanting gardens creating a timeless atmosphere.</p>
+            <div class="trending__details">
+              
+            </div>
+            <div class="trending__ratings">
+                <span>4 Stars</span>
+                <p>Reviews</p>
+            </div>
+        </div>
+
+        <div class="trending__card">
+            <img src="pa.jpg" alt="Trending Image">
+            <h4>Trending Sashay 3 <br>Paris</h4>
+            <p>The epitome of romance and culture, Paris captivates with its iconic landmarks, artistic treasures, and charming streets.</p>
+            <div class="trending__details">
+               
+            </div>
+            <div class="trending__ratings">
+                <span>3.5 Stars</span>
+                <p>Reviews</p>
+            </div>
+        </div>
+
+    </div>
+    <div class="section__container contact__container" id="contact">
+        <h2 class="section__title">Contact Us</h2>
+        <div class="contact__info">
+            <p>For inquiries, reach us at:</p>
+            <div>
+                <p>Phone: <a href="">+91 7798793555</a></p>
+                <p>Email: <a href="">kajaredhruv3@gmail.com</a></p>
+                <p>Instagram: <a href="" target="_blank">@....</a></p>
+            </div>
+        </div>
+    </div>
+  </header>
+  
+
+</body>
+
+</html>
